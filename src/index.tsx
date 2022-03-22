@@ -1,7 +1,7 @@
 import "./index.scss";
 import ReactDOM from "react-dom";
 import _, { initial } from "lodash";
-import { CounterComponent, DateComponent, PostComponent, PostList } from "./components/c";
+import { ButtonComponent, CounterComponent, DateComponent, PostComponent, PostList } from "./components/c";
 import { useState } from "react";
 
 //le props vengono ricevute devono essere passate dal padre al figlio
@@ -22,7 +22,7 @@ const App:React.FC = () => {
   {_.map(PostList, (post)=><PostComponent post={post}/>)}
 
   <CounterComponent name={"Contatore"} initialValue={initialValue} callback={(value)=>{setTempValue(value)}}/>
-
+  <ButtonComponent text={"Press Here"}/>
   <div className="wrapper">il valore del contatore è {tempValue}</div>
   </div>
     {/* <TestComponentSenzaTag /> */}

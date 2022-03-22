@@ -78,6 +78,15 @@ export const CounterComponent: React.FC<CounterProps> = (props) =>{
         <button onClick={()=>{clickHandler(initialValue)}}>Reset</button>
     </div>;
 };
-function setTempValue(newValue: number) {
-  throw new Error("Function not implemented.");
+interface ButtonProps{
+  readonly text: string;
 }
+export const ButtonComponent: React.FC<ButtonProps>=(props)=>{
+  const {text}=props;
+  return <div className="btn">
+    <h3>{text}</h3>
+    <button onClick={()=>{ alert('UEE SA FETT'); }}>This One</button>
+    <button onClick={()=>{console.log("Ciao sono il console log del bottone")}}>Another One</button>
+  </div>
+}
+
