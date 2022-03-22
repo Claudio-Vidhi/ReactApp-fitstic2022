@@ -6,8 +6,10 @@ body {
     font-size: 20px;
 }
 .wrapper {
-     display: flex;
-     align-items: center;
+     text-align: center;
+     align-items:center;
+     margin-left: 25%;
+     margin-right: 25%;
      justify-content: space-between;
      &>* {
          flex-grow: 1;
