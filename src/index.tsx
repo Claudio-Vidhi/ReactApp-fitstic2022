@@ -17,13 +17,16 @@ const App:React.FC = () => {
       return <PostComponent post={post} />;
     })} */}
   <DateComponent date={date}/>
-  <button onClick={()=>{setDate(new Date());}}>Bottone</button>
+  <button onClick={()=>{setDate(new Date());}}>Refresh Date</button>
 
   {_.map(PostList, (post)=><PostComponent post={post}/>)}
 
   <CounterComponent name={"Contatore"} initialValue={initialValue} callback={(value)=>{setTempValue(value)}}/>
-  <ButtonComponent text={"Press Here"}/>
+  <ButtonComponent clickCallback={()=>{console.log("sono il log del bottone");}} text={"log button"}/>
+  <ButtonComponent clickCallback={() => { alert("UE SA FET") }} text={"Another One"} />
   <div className="wrapper">il valore del contatore è {tempValue}</div>
+  <input type="text" placeholder="Scrivi qui.." onChange={(event)=>{const value= event.target.value;
+  console.log({value})}}></input>
   </div>
     {/* <TestComponentSenzaTag /> */}
   

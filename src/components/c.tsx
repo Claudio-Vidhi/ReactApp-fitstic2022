@@ -80,13 +80,13 @@ export const CounterComponent: React.FC<CounterProps> = (props) =>{
 };
 interface ButtonProps{
   readonly text: string;
+  readonly clickCallback: () => void;
 }
 export const ButtonComponent: React.FC<ButtonProps>=(props)=>{
-  const {text}=props;
+  const {text, clickCallback}=props; 
   return <div className="btn">
     <h3>{text}</h3>
-    <button onClick={()=>{ alert('UEE SA FETT'); }}>This One</button>
-    <button onClick={()=>{console.log("Ciao sono il console log del bottone")}}>Another One</button>
+    <button onClick={() => clickCallback()}>Press Me</button>
   </div>
 }
 
